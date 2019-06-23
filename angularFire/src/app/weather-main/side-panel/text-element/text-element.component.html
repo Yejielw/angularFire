@@ -1,3 +1,14 @@
-<p>
-  text-element works!
-</p>
+<div fxLayout="row wrap" fxLayoutAlign="center center" *ngIf="displayValue | async as entry">
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <p *ngIf="entry < 15">Is very cold Today</p>
+        <p *ngIf="entry > 15 && entry < 25">Is nice Today</p>
+        <p *ngIf="entry > 25">Is very hot Today</p>
+
+
+
+    
+    </div>
+    <button mat-button (click)="suscribe()" *ngIf="!suscribed">Suscribe</button>
+    <button mat-button (click)="unsuscribe()" *ngIf="suscribed">Unsuscribe</button>
+  
+  </div>

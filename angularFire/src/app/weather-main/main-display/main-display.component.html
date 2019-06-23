@@ -1,3 +1,23 @@
-<p>
-  main-display works!
-</p>
+<div fxLayout="column" 
+      fxLayout.gt-sm="row"
+      fxLayoutAlign="center center" 
+      fxLayoutAlign.gt-sm="space-between start"  
+      *ngIf="entriesService.entries | async as entries" >
+  <div fxFlex="65">
+      <app-submit-weather></app-submit-weather>
+      <ng-container *ngFor="let item of entries; first as first">
+          <ng-container *ngIf="first" >
+              <p>Temperature: {{item.temperature}}&#8451;</p>
+              <p>Humidity: {{item.humidity}}%</p>
+              <p>Pressure: {{item.pressure}}bars</p>
+
+          </ng-container>
+           
+      </ng-container>
+      
+
+  </div>
+  <div fxFlex="30">
+     <app-side-panel [weather]="entries"></app-side-panel>
+  </div>
+</div>

@@ -1,3 +1,5 @@
-<p>
-  side-panel works!
-</p>
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+  <app-statistics [weatherSingleValue]="weather"></app-statistics>
+  <app-american-element [weatherSingleValue]="weather[0]"></app-american-element>
+  <app-text-element [weatherSingleValue]="weather[0]"></app-text-element>
+</div>

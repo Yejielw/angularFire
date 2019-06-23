@@ -1,3 +1,11 @@
-<p>
-  statistics works!
-</p>
+<div fxLayout="row wrap" fxLayoutAlign="center center" *ngIf="displayValue | async as entry">
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <p>Min temp : {{min_max_avg[0]}}</p>
+        <p>Max temp : {{min_max_avg[1]}}</p>
+        <p>AVG temp : {{min_max_avg[2]/entry.length | number}}</p>
+    
+    </div>
+    <button mat-button (click)="suscribe()" *ngIf="!suscribed">Suscribe</button>
+    <button mat-button (click)="unsuscribe()" *ngIf="suscribed">Unsuscribe</button>
+  
+  </div>

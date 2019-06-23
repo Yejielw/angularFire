@@ -1,3 +1,8 @@
-<p>
-  american-element works!
-</p>
+<div fxLayout="row wrap" fxLayoutAlign="center center" *ngIf="displayValue | async as entry">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <p>{{entry}}&#8457;</p>
+    </div>
+    <button mat-button (click)="suscribe()" *ngIf="!suscribed">Suscribe</button>
+    <button mat-button (click)="unsuscribe()" *ngIf="suscribed">Unsuscribe</button>
+  
+  </div>

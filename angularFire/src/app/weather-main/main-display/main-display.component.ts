@@ -1,4 +1,6 @@
+import { WeatherService } from './../weather.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-main-display',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainDisplayComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public entriesService: WeatherService
+  ) { }
 
   ngOnInit() {
+
   }
 
 }

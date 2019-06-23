@@ -1,4 +1,6 @@
+import { WeatherService } from './../weather.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-submit-weather',
@@ -6,10 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./submit-weather.component.sass']
 })
 export class SubmitWeatherComponent implements OnInit {
-
-  constructor() { }
+  public weatherEntry: FormGroup;
+  constructor(
+    private _formBuilder: FormBuilder,
+    private weatherService: WeatherService
+  ) { }
 
   ngOnInit() {
+    this.weatherEntry = this.createWeatherForm()
   }
-
+  createWeatherForm(): FormGroup {
+    return this._formBuilder.group({
+      temperature: ['',  Validators.required],
+      humidity: ['' , Validators.required],
+      pressure: ['' , Validators.required],
+    });
+  }
+  save(){
+    if(this.weatherEntry.invalid){
+      return;
+    }
+    this.weatherService.addEntry(this.weatherEntry.value).then( data => {
+      this.weatherEntry.reset()
+    } )
+  }
 }
