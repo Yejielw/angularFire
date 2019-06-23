@@ -11,6 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {MatInputModule} from '@angular/material/input';
     FlexLayoutModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    AngularFirestoreModule
   ],
 })
 export class WeatherMainModule { }
