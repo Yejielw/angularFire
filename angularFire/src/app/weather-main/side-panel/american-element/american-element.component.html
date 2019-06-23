@@ -1,8 +1,10 @@
-<div fxLayout="row wrap" fxLayoutAlign="center center" *ngIf="displayValue | async as entry">
-    <div fxLayout="column" fxLayoutAlign="center center">
+<div class="mat-elevation-z2" fxLayout="row wrap" fxLayoutAlign="space-between center" *ngIf="displayValue | async as entry" fxFlex="290px">
+  <div fxLayout="column" fxLayoutAlign="center start">
+  <p  fxFlex="100">In the USA (farenheit): </p>
+
       <p>{{entry}}&#8457;</p>
     </div>
-    <button mat-button (click)="suscribe()" *ngIf="!suscribed">Suscribe</button>
-    <button mat-button (click)="unsuscribe()" *ngIf="suscribed">Unsuscribe</button>
+    <button mat-button (click)="suscribe()" *ngIf="!suscribed" color="accent">Suscribe</button>
+    <button mat-button (click)="unsuscribe()" *ngIf="suscribed" color="warn">Unsuscribe</button>
   
   </div>

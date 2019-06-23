@@ -1,11 +1,13 @@
 import { WeatherService } from './../weather.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-submit-weather',
   templateUrl: './submit-weather.component.html',
-  styleUrls: ['./submit-weather.component.sass']
+  styleUrls: ['./submit-weather.component.sass'],
+  encapsulation: ViewEncapsulation.None,
+
 })
 export class SubmitWeatherComponent implements OnInit {
   public weatherEntry: FormGroup;

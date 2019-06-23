@@ -7,10 +7,12 @@
       <app-submit-weather></app-submit-weather>
       <ng-container *ngFor="let item of entries; first as first">
           <ng-container *ngIf="first" >
+            <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">  
+              <h3>The latest entry is:</h3>
               <p>Temperature: {{item.temperature}}&#8451;</p>
               <p>Humidity: {{item.humidity}}%</p>
               <p>Pressure: {{item.pressure}}bars</p>
-
+            </div>
           </ng-container>
            
       </ng-container>

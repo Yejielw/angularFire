@@ -1,5 +1,5 @@
 import { WeatherService } from './../../weather.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Entry } from 'src/app/models/entry.model';
 import { takeUntil } from 'rxjs/operators';
@@ -7,7 +7,9 @@ import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
-  styleUrls: ['./statistics.component.sass']
+  styleUrls: ['./statistics.component.sass'],
+  encapsulation: ViewEncapsulation.None,
+
 })
 export class StatisticsComponent implements OnInit {
 

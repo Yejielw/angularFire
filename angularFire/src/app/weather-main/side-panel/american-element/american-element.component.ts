@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Entry } from 'src/app/models/entry.model';
 import { WeatherService } from '../../weather.service';
@@ -7,7 +7,9 @@ import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-american-element',
   templateUrl: './american-element.component.html',
-  styleUrls: ['./american-element.component.sass']
+  styleUrls: ['./american-element.component.sass'],
+  encapsulation: ViewEncapsulation.None,
+
 })
 export class AmericanElementComponent implements OnInit {
  

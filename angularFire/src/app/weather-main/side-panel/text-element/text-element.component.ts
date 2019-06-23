@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Entry } from 'src/app/models/entry.model';
 import { takeUntil } from 'rxjs/operators';
@@ -7,7 +7,9 @@ import { WeatherService } from '../../weather.service';
 @Component({
   selector: 'app-text-element',
   templateUrl: './text-element.component.html',
-  styleUrls: ['./text-element.component.sass']
+  styleUrls: ['./text-element.component.sass'],
+  encapsulation: ViewEncapsulation.None,
+
 })
 export class TextElementComponent implements OnInit {
 
